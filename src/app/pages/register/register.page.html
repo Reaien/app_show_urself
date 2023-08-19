@@ -1,3 +1,33 @@
 <ion-content [fullscreen]="true">
-
+    <div class="glass-content">
+        <ion-grid>
+            <ion-row>
+                <ion-col class="ion-text-center">
+                    <img class="logo puff-in-center" src="assets/img/logo.png" alt="logo">
+                </ion-col>
+            </ion-row>
+          <ion-row>
+            <ion-col class="ion-text-center">
+                <ion-card class="card-container">
+                    <ion-card-header>
+                      <ion-card-title>Card Title</ion-card-title>
+                      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+                    </ion-card-header>
+                  
+                    <ion-card-content>
+                      Here's a small text description for the card content. Nothing more, nothing less.
+                    </ion-card-content>
+                  
+                    <ion-button fill="clear">Action 1</ion-button>
+                    <ion-button fill="clear">Action 2</ion-button>
+                </ion-card>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="ion-text-center">
+              <ion-button routerLink="/register" class="boton-login" color="warning">Completar Registro</ion-button> 
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </div>
 </ion-content>
