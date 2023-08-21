@@ -1,18 +1,36 @@
 <ion-content [fullscreen]="true">
   <div class="glass-content">
-    <ion-grid>
-      <ion-row>
-        <ion-col class="ion-text-center">
-          <img class="logo puff-in-center" src="assets/img/logo.png" alt="logo">
-          <h1 class="titulo slide-in-left">Show</h1>
-          <h1 class="titulo slide-in-left">URself</h1>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col class="ion-text-center">
-          <ion-button routerLink="/register" class="boton-login" color="warning">Registrate</ion-button> 
-        </ion-col>
-      </ion-row>
-    </ion-grid>
+      <ion-grid>
+        <ion-row>
+            <ion-col class="ion-text-center">
+                <img class="logo puff-in-center" src="assets/img/logo.png" alt="logo">
+            </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col class="ion-text-center">
+              <ion-card class="card-container box">
+                <form [formGroup] = "formularioLogin">
+                  <ion-item class=" label-container">
+                    <ion-label class="ion-text-center" position="floating">Usuario</ion-label>
+                    <ion-input formControlName="nombre"></ion-input>
+                  </ion-item>
+                  <ion-item class="label-container">
+                    <ion-label position="floating" class="ion-text-center ">Password</ion-label>
+                    <ion-input formControlName="password" type="password"></ion-input>
+                  </ion-item>
+                </form>
+              </ion-card>
+          </ion-col>
+        </ion-row>
+
+
+        <!-- (click)="ingresar()"-->
+
+        <ion-row>
+          <ion-col class="ion-text-center">
+            <ion-button routerLink="/home" class="boton-login" color="warning">Ingresar</ion-button> 
+          </ion-col>
+        </ion-row>
+      </ion-grid>
   </div>
 </ion-content>

@@ -1,69 +1,11 @@
-/*webkit animation de animacion de titulo*/
 
-@-webkit-keyframes slide-in-left {
-    0% {
-      -webkit-transform: translateX(-1000px);
-              transform: translateX(-1000px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-      opacity: 1;
-    }
-  }
-  @keyframes slide-in-left {
-    0% {
-      -webkit-transform: translateX(-1000px);
-              transform: translateX(-1000px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: translateX(0);
-              transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
-
-/*webkiit animation del logo*/
-@-webkit-keyframes puff-in-center {
-    0% {
-      -webkit-transform: scale(2);
-              transform: scale(2);
-      -webkit-filter: blur(4px);
-              filter: blur(4px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-filter: blur(0px);
-              filter: blur(0px);
-      opacity: 1;
-    }
-  }
-  @keyframes puff-in-center {
-    0% {
-      -webkit-transform: scale(2);
-              transform: scale(2);
-      -webkit-filter: blur(4px);
-              filter: blur(4px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-transform: scale(1);
-              transform: scale(1);
-      -webkit-filter: blur(0px);
-              filter: blur(0px);
-      opacity: 1;
-    }
-  }
-  
-  
 
 ion-content{
     --ion-background-color: url(/assets/img/bg-login.gif) no-repeat center center / cover
+}
+
+ion-card{
+    --ion-background-color: rgba(88, 73, 73, 0);
 }
 
 .glass-content {
@@ -77,24 +19,29 @@ ion-content{
     min-height: 100vh;
 }
 
-.logo{
-  max-width: 50%;
-  opacity: 80%;
-  margin-top: 5rem;
+.card-container{
+    margin-top: 20%;
+    padding-bottom: 2%;
 }
 
-.titulo{
-    color: #ec6635;
-    font-size: 3.9rem;
+.label-container{
+    color: white;
     font-weight: bolder;
 }
+
+
+.logo{
+    max-width: 50%;
+    opacity: 95%;
+    margin-top: 5rem;
+  }
 
 .boton-login{
     --ion-color-warning-contrast: white;
     --ion-color-warning: #ec6635;
     width: 80%;
     height: 3.2rem;
-    margin-top: 65%;
+    margin-top: 30%;
     border-radius: 5rem;
     font-weight: bolder;
 
@@ -111,7 +58,36 @@ ion-content{
 	        animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-.puff-in-center {
-	-webkit-animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-	        animation: puff-in-center 0.7s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-}
+
+/*box de form*/
+.box {
+    --border-size: 3px;
+    --border-angle: 0turn;
+    background-image: conic-gradient(
+        from var(--border-angle),
+        rgb(46, 45, 48),
+        rgb(46, 45, 48) 50%,
+        rgb(46, 45, 48)
+      ),
+      conic-gradient(from var(--border-angle), transparent 20%, rgb(223, 223, 223), #ec6635);
+    background-size: calc(100% - (var(--border-size) * 2))
+        calc(100% - (var(--border-size) * 2)),
+      cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  
+    animation: bg-spin 3s linear infinite;
+    @keyframes bg-spin {
+      to {
+        --border-angle: 1turn;
+      }
+    }
+  
+  }
+  
+  @property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+  }
+  
