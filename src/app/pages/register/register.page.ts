@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'; //librerias importadas para crear formulario, controlar y validar registros
-import { AlertController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +13,7 @@ export class RegisterPage implements OnInit {
   formularioRegistro: FormGroup;
 
   //contructor publico que se crea a partir del FormBuilder, se le dan parametros que se quieren aplicar en el formlario
-  constructor(public fb: FormBuilder, public alertController: AlertController) { //tambien se importa un public AlertController para la funcion async que utiliza este metodo
+  constructor(public fb: FormBuilder, public alertController: AlertController, public navCtrl: NavController) { //tambien se importa un public AlertController para la funcion async que utiliza este metodo
       this.formularioRegistro = this.fb.group({
       'nombre': new FormControl("",Validators.required), //como será llamado, se le asigna como nuevo objeto new FormControl y se le dan los parametros que estará vacio y que se requiere validar
       'password': new FormControl("",Validators.required),
@@ -29,7 +29,7 @@ export class RegisterPage implements OnInit {
   async registrar(){
     let formulario = this.formularioRegistro.value;
     if (this.formularioRegistro.invalid) {
-      const alert = await this.alertController.create({
+      const alert = await this.alertController.create({ //boton con funcion await asincrona para el metodo invalid 
         header: 'Error de registro',
         message: 'Debes llenar todos los datos',
         buttons: ['Reintentar'],
@@ -40,8 +40,9 @@ export class RegisterPage implements OnInit {
     }else{
       const alert = await this.alertController.create({
         header: 'Usuario Registrado',
-        buttons: ['Volviendo al Home'],
+        buttons: ['Redirigiendo al inicio'],
       });
+      this.navCtrl.navigateRoot('inicio'); //nav controller libreria que permite redireccionar al cumplirse condiciones
       await alert.present();  
     }
 
