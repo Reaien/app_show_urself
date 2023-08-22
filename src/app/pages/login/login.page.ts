@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'; //librerias importadas para crear formulario, controlar y validar registros
+import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginPage implements OnInit {
   formularioLogin: FormGroup;
 
   //contructor publico que se crea a partir del FormBuilder, se le dan parametros que se quieren aplicar en el formlario
-  constructor(public fb: FormBuilder) {
+  constructor(public fb: FormBuilder, public alertController: AlertController, public navCtrl: NavController) { //modulos a importar
 
     this.formularioLogin = this.fb.group({
       'nombre': new FormControl("",Validators.required), //como será llamado, se le asigna como nuevo objeto new FormControl y se le dan los parametros que estará vacio y que se requiere validar
@@ -22,6 +23,32 @@ export class LoginPage implements OnInit {
    }
 
   ngOnInit() {
+  }
+
+
+
+  async ingresar(){
+    let formulario = this.formularioLogin.value;
+
+    let userString = localStorage.getItem('user');
+
+    if (userString!== null) {
+      let user = JSON.parse(userString);
+    
+    if (user.nombre == formulario.nombre && user.password == formulario.password){
+        localStorage.setItem('ingresado','true');
+        this.navCtrl.navigateRoot('home');
+      }else{
+        const alert = await this.alertController.create({
+          header: 'Datos incorrectos',
+          message: 'Ingresa los datos correctos',
+          buttons: ['Reintentar'],
+        });
+
+        await alert.present();  
+      }
+    }
+
   }
 
 }

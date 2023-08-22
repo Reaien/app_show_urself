@@ -37,6 +37,12 @@ export class RegisterPage implements OnInit {
   
       await alert.present();  
       return;    
+    }else{
+      const alert = await this.alertController.create({
+        header: 'Usuario Registrado',
+        buttons: ['Volviendo al Home'],
+      });
+      await alert.present();  
     }
 
     let user = { //se crea una variable que contiene un diccionario json con los datos de cada atributo del formulario el cual al comienzo lo pasamos a un let formulario
