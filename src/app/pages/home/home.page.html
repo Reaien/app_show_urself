@@ -1,13 +1,20 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title></ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">hola {{data.usuario}}</ion-title>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-chip class="box">
+              <ion-avatar>
+                <img alt="user-avatar" src="https://i.pinimg.com/564x/58/14/31/58143128ab1a8ff18806bd193c3beec3.jpg" />
+              </ion-avatar>
+              <ion-label class="fuente-bienvenido">Bienvenido {{data.usuario}}</ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-toolbar>
   </ion-header>
 </ion-content>
