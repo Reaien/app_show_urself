@@ -34,6 +34,7 @@ export class LoginPage implements OnInit {
 
     if (userString!== null) {
       let user = JSON.parse(userString);
+      //RECORDATORIO ver si puedo crear aqui el state con el user que ya obtiene el objeto del lcoal storage transformado a string
     
     if (user.nombre == formulario.nombre && user.password == formulario.password){
         localStorage.setItem('ingresado','true');
