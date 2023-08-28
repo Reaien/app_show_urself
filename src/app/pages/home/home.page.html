@@ -15,17 +15,24 @@
           </ion-col>
         </ion-row>
       </ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-card>
-            <ion-button class="icon-play"  color="medium" aria-label="Favorite">
-              <ion-icon size="large" name="caret-forward-circle-outline" aria-hidden="true"></ion-icon>
-            </ion-button>
-            <ion-img src="../../../assets/img/artista1.png">
-            </ion-img>
-          </ion-card>
-        </ion-col>
-      </ion-row>
     </ion-toolbar>
   </ion-header>
+
+
+  <!-- me volvi loco, iteración con condicional de array creado en el TS del page home para alojar imagenes-->
+  <div class="swiper-container" *ngIf="slides.length > 0">
+    <swiper-container [modules] = "swiperModules"
+                      [slidesPerView]="1.2"
+                      [initialSlide]="1"
+                      [centeredSlides]="true"
+                      [spaceBetween]="15">
+      <swiper-slide *ngFor="let slide of slides">
+        <img class="slide-image" [src]="slide?.banner">
+      </swiper-slide>
+    </swiper-container>
+  </div>
+
+
+
+
 </ion-content>
