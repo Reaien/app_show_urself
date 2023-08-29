@@ -57,5 +57,17 @@
     </ion-row>
   </ion-grid>
 
+  <div class="swiper-genre-container" *ngIf="genreSlides.length > 0">
+    <swiper-container [modules] = "swiperModules"
+                      [slidesPerView]="2 "
+                      [initialSlide]="1"
+                      [centeredSlides]="false"
+                      [spaceBetween]="4">
+      <swiper-slide *ngFor="let genreSlide of genreSlides">
+        <img class="slide-genre-image" [src]="genreSlide?.genre">
+      </swiper-slide>
+    </swiper-container>
+  </div>
+
 
 </ion-content>

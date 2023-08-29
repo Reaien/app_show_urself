@@ -24,8 +24,12 @@ h1, h2, h3, p, button{
   max-height: 60%;
 }
 
+.slide-genre-image{
+  border-radius: 10px; 
+  margin-left: 2rem; 
+}
+
 .slide-image{
-  border-radius: 10px;
   height: 12rem;
 }
 
@@ -82,6 +86,7 @@ ion-icon {
 .chipiChip2{
   height: 3.5rem;
   background-color:rgb(46, 45, 48);
+  box-shadow: 0.5px 1px 1px 1px #000000;;
 }
 
 .avatar{
