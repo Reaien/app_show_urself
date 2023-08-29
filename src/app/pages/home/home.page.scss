@@ -1,5 +1,5 @@
 ion-content{
-    --ion-background-color: rgb(46, 45, 48);
+    --ion-background-color: rgb(36, 35, 37);
 }
 
 h1, h2, h3, p, button{
@@ -27,6 +27,15 @@ h1, h2, h3, p, button{
 .slide-image{
   border-radius: 10px;
   height: 12rem;
+}
+
+.slider-videos-tittle{
+  margin-left: 5%;
+}
+
+.slider-videos-subtittle{
+  margin-left: 5%;
+  color: #ec6635;
 }
 
 ion-icon {
@@ -65,4 +74,17 @@ ion-icon {
     inherits: true;
     initial-value: 0turn;
   }
-  
+
+.chipiChip{
+  height: 3.5rem;
+}
+
+.chipiChip2{
+  height: 3.5rem;
+  background-color:rgb(46, 45, 48);
+}
+
+.avatar{
+  height: 3rem;
+  min-width: 3rem;
+}
