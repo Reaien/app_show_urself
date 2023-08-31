@@ -29,6 +29,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
     canActivate : [UnloggedGuard]
   },
+  {
+    path: 'pass-recover',
+    loadChildren: () => import('./pages/pass-recover/pass-recover.module').then( m => m.PassRecoverPageModule),
+    canActivate : [UnloggedGuard]
+  },
 ];
 
 @NgModule({

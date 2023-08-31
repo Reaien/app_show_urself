@@ -60,7 +60,7 @@
   <div class="swiper-genre-container" *ngIf="genreSlides.length > 0">
     <swiper-container [modules] = "swiperModules"
                       [slidesPerView]="2 "
-                      [initialSlide]="1"
+                      [initialSlide]="0"
                       [centeredSlides]="false"
                       [spaceBetween]="4">
       <swiper-slide *ngFor="let genreSlide of genreSlides">

@@ -48,7 +48,7 @@ ion-card{
 }
 @media (max-width: 376px){
     .boton-login{
-        margin-top: 15%;
+        margin-top: 20%;
     }
 }
 
@@ -57,26 +57,9 @@ ion-card{
   --ion-color-warning: #ec6635;
   border-radius: 5rem;
   width: 40%;
-  font-size: 12px;
+  font-size: 10px;
   margin-left: 56%;
-}
-
-@media (max-width: 386px){
-  .boton-reset{
-      font-size: 9px;
-  }
-}
-
-@media (max-width: 376px){
-  .boton-reset{
-      font-size: 10.5px;
-  }
-}
-
-@media (max-width: 321px){
-  .boton-reset{
-      font-size: 7.5px;
-  }
+  
 }
 
 

@@ -1,5 +1,3 @@
-
-
 <ion-content [fullscreen]="true">
   <div class="glass-content">
       <ion-grid>
@@ -11,31 +9,24 @@
         <ion-row>
           <ion-col class="ion-text-center">
               <ion-card class="card-container box">
-                <form [formGroup] = "formularioLogin">
+                <form [formGroup] = "formularioReset">
                   <ion-item class=" label-container">
                     <ion-label class="ion-text-center" position="floating">Usuario</ion-label>
-                    <ion-input formControlName="nombre" [(ngModel)]="user.usuario"></ion-input>
+                    <ion-input formControlName="nombre" ></ion-input>
                   </ion-item>
                   <ion-item class="label-container">
-                    <ion-label position="floating" class="ion-text-center ">Password</ion-label>
-                    <ion-input formControlName="password" type="password" [(ngModel)]="user.password"></ion-input>
+                    <ion-label position="floating" class="ion-text-center ">Nueva Password</ion-label>
+                    <ion-input formControlName="password" type="password" ></ion-input>
                   </ion-item>
                 </form>
               </ion-card>
           </ion-col>
         </ion-row>
-        <ion-grid>
-          <ion-row>
-            <ion-col>
-              <ion-button  class="boton-reset" [routerLink]="['/pass-recover']" color="warning">Recupera tu contraseña</ion-button> 
-            </ion-col>
-          </ion-row>
-        </ion-grid>
 
 
         <ion-row>
           <ion-col class="ion-text-center">
-            <ion-button (click)="ingresar()" class="boton-login" color="warning">Ingresar</ion-button> 
+            <ion-button (click)="resetear()" class="boton-login" color="warning">Resetear contraseña</ion-button> 
           </ion-col>
         </ion-row>
       </ion-grid>
