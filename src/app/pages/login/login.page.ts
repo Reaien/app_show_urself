@@ -39,21 +39,36 @@ export class LoginPage implements OnInit {
 
     let userString = localStorage.getItem('user');
 
+    //condicional que evalua el estado del local storage y campos vacios
+    if (formulario.nombre == "" || formulario.password == "" || userString == null) {
+      const alert = await this.alertController.create({
+        header: 'Datos incorrectos',
+        message: 'Completa los campos',
+        buttons: ['Reintentar'],
+        
+      });
+
+      await alert.present();  
+      return;      
+    }
+
+    //la condicional aquí comienza evaluando desde el comienzo si el local storage tiene valores
     if (userString!== null) {
       let user = JSON.parse(userString);
-      //RECORDATORIO ver si puedo crear aqui el state con el user que ya obtiene el objeto del lcoal storage transformado a string
+      //RECORDATORIO ver si puedo crear aqui el state con el user que ya obtiene el objeto del local storage transformado a string
     
       if (user.nombre == formulario.nombre && user.password == formulario.password){
           localStorage.setItem('ingresado','true');
-          this.navCtrl.navigateRoot('home');
         }else{
           const alert = await this.alertController.create({
             header: 'Datos incorrectos',
             message: 'Ingresa los datos correctos',
             buttons: ['Reintentar'],
+            
           });
 
           await alert.present();  
+          return;
         }
     }
 
@@ -63,7 +78,7 @@ export class LoginPage implements OnInit {
       }
     }
 
-    this.router.navigate(['/home'],navigationExtras);
+    this.router.navigate(['/splash'],navigationExtras);
 
   }
 

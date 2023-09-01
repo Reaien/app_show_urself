@@ -34,6 +34,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/pass-recover/pass-recover.module').then( m => m.PassRecoverPageModule),
     canActivate : [UnloggedGuard]
   },
+  {
+    path: 'splash',
+    loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule),
+    canActivate : [LoggerGuard]
+  },
 ];
 
 @NgModule({

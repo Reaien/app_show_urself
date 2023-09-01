@@ -57,7 +57,7 @@ ion-card{
   --ion-color-warning: #ec6635;
   border-radius: 5rem;
   width: 40%;
-  font-size: 12px;
+  font-size: 10px;
   margin-left: 56%;
 }
 
@@ -69,7 +69,7 @@ ion-card{
 
 @media (max-width: 376px){
   .boton-reset{
-      font-size: 10.5px;
+      font-size: 8px;
   }
 }
 
@@ -117,4 +117,38 @@ ion-card{
     inherits: true;
     initial-value: 0turn;
   }
+
+.pulsate-fwd {
+  -webkit-animation: pulsate-fwd 0.5s ease-in-out infinite both;
+          animation: pulsate-fwd 0.5s ease-in-out infinite both;
+}
+
+@-webkit-keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+@keyframes pulsate-fwd {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
   
