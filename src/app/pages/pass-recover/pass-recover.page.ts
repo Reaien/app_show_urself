@@ -35,6 +35,20 @@ export class PassRecoverPage implements OnInit {
     if (userString !== null) {
       let user = JSON.parse(userString); //user contiene los datos del localStorage parseados a string
 
+      if (formularioReset.nombre == "" || formularioReset.password == "" || userString == null) {
+        const alert = await this.alertController.create({
+          header: 'Sin datos ingresados',
+          message: 'Completa los campos',
+          buttons: ['Reintentar'],
+          
+        });
+  
+        await alert.present();  
+        return;      
+      }
+
+
+
       if (user.nombre == formularioReset.nombre) { // condiciono la función esperando que user del localstorage y del form sean iguales
 
         user.password = formularioReset.password 
