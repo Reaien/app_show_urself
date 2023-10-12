@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'; //librerias importadas para crear formulario, controlar y validar registros
-import { NavigationExtras, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AlertController, NavController } from '@ionic/angular';
 
 @Component({
@@ -9,10 +9,6 @@ import { AlertController, NavController } from '@ionic/angular';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit {
-
-
-
-
 
   //variable con formato de formGroup
   formularioRegistro: FormGroup;
