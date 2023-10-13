@@ -11,22 +11,25 @@
         <ion-row>
           <ion-col class="ion-text-center">
               <ion-card class="card-container box">
-                <form [formGroup] = "formularioRegistro">
+                <form [formGroup] = "form">
                   <ion-item class=" label-container">
                     <ion-label class="ion-text-center" position="floating">Usuario</ion-label>
-                    <ion-input formControlName="nombre" type="text"></ion-input>
+                    <ion-input formControlName="name" type="text"></ion-input>
                   </ion-item>
+
+                  <div class="validators" *ngIf="form.controls.name.errors && form.controls.name.touched">
+                    <div *ngIf="form.controls.name.errors?.['requerid']">El nombre es requerido</div>
+                    <div *ngIf="form.controls.name.errors?.['minlength']">El nombre debe tener 4 caracteres como minimo</div>
+                  </div>
+
                   <ion-item class="label-container">
                     <ion-label position="floating" class="ion-text-center ">Password</ion-label>
                     <ion-input formControlName="password" type="password"></ion-input>
                   </ion-item>
-                  <ion-item class="label-container">
-                    <ion-label position="floating" class="ion-text-center ">Confirmar Password</ion-label>
-                    <ion-input formControlName="confirmacion-password" type="password"></ion-input>
-                  </ion-item>
+
                   <ion-item class="label-container">
                     <ion-label position="floating" class="ion-text-center ">Email</ion-label>
-                    <ion-input formControlName="email" type="text"></ion-input>
+                    <ion-input formControlName="email" type="email"></ion-input>
                   </ion-item>
                 </form>
               </ion-card>

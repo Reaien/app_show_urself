@@ -11,10 +11,10 @@
         <ion-row>
           <ion-col class="ion-text-center">
               <ion-card class="card-container box">
-                <form [formGroup] = "formularioLogin">
+                <form [formGroup] = "form">
                   <ion-item class=" label-container">
                     <ion-label class="ion-text-center" position="floating">Usuario</ion-label>
-                    <ion-input formControlName="nombre" [(ngModel)]="user.usuario"></ion-input>
+                    <ion-input formControlName="email" [(ngModel)]="user.email"></ion-input>
                   </ion-item>
                   <ion-item class="label-container">
                     <ion-label position="floating" class="ion-text-center ">Password</ion-label>
