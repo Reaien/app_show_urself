@@ -24,7 +24,7 @@ export class LoginPage implements OnInit {
   })
 
   router = inject(Router);
-  firebaseSvc = inject(FirebaseService);
+  apiFireBase = inject(FirebaseService);
   utilsSvc = inject(UtilsService)
   toastController = inject(ToastController)
 
@@ -35,7 +35,7 @@ export class LoginPage implements OnInit {
 
   ingresar(){
     if (this.form.valid) {
-      this.firebaseSvc.login(this.form.value as User).then(res => {
+      this.apiFireBase.login(this.form.value as User).then(res => {
         console.log(res)
         localStorage.setItem('ingresado','true');
         let navigationExtras : NavigationExtras={

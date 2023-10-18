@@ -21,6 +21,7 @@ export class RegisterPage implements OnInit {
   }
 
   form = new FormGroup({
+    uid: new FormControl(""),
     email: new FormControl("",[Validators.required, Validators.email]), //como será llamado, se le asigna como nuevo objeto new FormControl y se le dan los parametros que estará vacio y que se requiere validar
     password: new FormControl("",[Validators.required]),
     name: new FormControl("",[Validators.required, Validators.minLength(4)])
@@ -36,10 +37,17 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
   }
 
-  registrar(){
+  async registrar(){
     if (this.form.valid) {
       this.firebaseSvc.registro(this.form.value as User).then(async res => {
         await this.firebaseSvc.actualizarUsuario(this.form.value.name)
+
+        let uid = res.user.uid;
+
+        this.form.controls.uid.setValue(uid);
+
+        this.setUserInfo(uid);
+
         console.log(res)
       }).catch(error =>{
         console.log(error)
@@ -53,5 +61,35 @@ export class RegisterPage implements OnInit {
     }
     
   }
+
+  async setUserInfo(uid: string){
+    if (this.form.valid) {
+
+      let path = `users/${uid}`;
+      delete this.form.value.password;
+
+      this.firebaseSvc.setDocument(path, this.form.value).then(async res => {
+
+        this.utilsSvc.saveInLocalStorage('user', this.form.value);
+
+        this.utilsSvc.routerLink('/inicio')
+
+        this.form.reset();
+
+        
+
+      }).catch(error =>{
+        console.log(error)
+        this.utilsSvc.presentToast({
+          message: 'Error en el inicio de sesión, comprueba tu email o contraseña',
+          duration: 3000,
+          position: 'middle',
+          icon: 'alert-circle-outline'
+        })
+      })
+    }
+    
+  }
+
 
 }
