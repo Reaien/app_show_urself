@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CompHomeComponent } from 'src/app/components/comp-home/comp-home.component'
-import { CompUserComponent } from 'src/app/components/comp-user/comp-user.component'
+
 import { HomePage } from './home.page';
+import { CompHomeComponent } from 'src/app/shared/components/comp-home/comp-home.component';
+import { CompUserComponent } from 'src/app/shared/components/comp-user/comp-user.component';
 
 const routes: Routes = [
   {

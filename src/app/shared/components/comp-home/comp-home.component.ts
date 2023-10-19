@@ -27,7 +27,7 @@ export class CompHomeComponent implements OnInit {
     });
   }
 
-  ngOnInit():  void{
+  ngOnInit(){
 
     this.slides = [
       {banner: '../../../assets/img/artista1.png'},

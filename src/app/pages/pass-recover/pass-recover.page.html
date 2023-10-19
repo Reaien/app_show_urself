@@ -9,15 +9,18 @@
         <ion-row>
           <ion-col class="ion-text-center">
               <ion-card class="card-container box">
-                <form [formGroup] = "formularioReset">
+                <form [formGroup] = "form">
                   <ion-item class=" label-container">
-                    <ion-label class="ion-text-center" position="floating">Usuario</ion-label>
-                    <ion-input formControlName="nombre" ></ion-input>
+                    <ion-label class="ion-text-center" position="floating">Email</ion-label>
+                    <ion-input formControlName="email" ></ion-input>
                   </ion-item>
-                  <ion-item class="label-container">
-                    <ion-label position="floating" class="ion-text-center ">Nueva Password</ion-label>
-                    <ion-input formControlName="password" type="password" ></ion-input>
-                  </ion-item>
+
+
+                  <div class="validators" *ngIf="form.controls.email.errors && form.controls.email.touched">
+                    <div *ngIf="form.controls.email.errors?.['requerid']">El email es requerido</div>
+                  </div>
+
+
                 </form>
               </ion-card>
           </ion-col>

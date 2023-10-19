@@ -14,21 +14,16 @@ import { UtilsService } from 'src/app/services/utils.service';
 export class RegisterPage implements OnInit {
 
 
-  user={
-    email:"",
-    password:"",
-    name: ""
-  }
 
   form = new FormGroup({
     uid: new FormControl(""),
     email: new FormControl("",[Validators.required, Validators.email]), //como será llamado, se le asigna como nuevo objeto new FormControl y se le dan los parametros que estará vacio y que se requiere validar
-    password: new FormControl("",[Validators.required]),
+    password: new FormControl("",[Validators.required, Validators.minLength(6)]),
     name: new FormControl("",[Validators.required, Validators.minLength(4)])
   })
 
   router = inject(Router);
-  firebaseSvc = inject(FirebaseService);
+  apiFireBase = inject(FirebaseService);
   utilsSvc = inject(UtilsService)
   toastController = inject(ToastController)
 
@@ -39,8 +34,8 @@ export class RegisterPage implements OnInit {
 
   async registrar(){
     if (this.form.valid) {
-      this.firebaseSvc.registro(this.form.value as User).then(async res => {
-        await this.firebaseSvc.actualizarUsuario(this.form.value.name)
+      this.apiFireBase.registro(this.form.value as User).then(async res => {
+        await this.apiFireBase.actualizarUsuario(this.form.value.name)
 
         let uid = res.user.uid;
 
@@ -68,7 +63,7 @@ export class RegisterPage implements OnInit {
       let path = `users/${uid}`;
       delete this.form.value.password;
 
-      this.firebaseSvc.setDocument(path, this.form.value).then(async res => {
+      this.apiFireBase.setDocument(path, this.form.value).then(async res => {
 
         this.utilsSvc.saveInLocalStorage('user', this.form.value);
 

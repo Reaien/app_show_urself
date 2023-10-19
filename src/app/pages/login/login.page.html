@@ -13,13 +13,26 @@
               <ion-card class="card-container box">
                 <form [formGroup] = "form">
                   <ion-item class=" label-container">
-                    <ion-label class="ion-text-center" position="floating">Usuario</ion-label>
-                    <ion-input formControlName="email" [(ngModel)]="user.email"></ion-input>
+                    <ion-label class="ion-text-center" position="floating">Email</ion-label>
+                    <ion-input formControlName="email" ></ion-input>
                   </ion-item>
+
+                  <div class="validators" *ngIf="form.controls.email.errors && form.controls.email.touched">
+                    <div *ngIf="form.controls.email.errors?.['requerid']">El email es requerido</div>
+                  </div>
+
+
                   <ion-item class="label-container">
                     <ion-label position="floating" class="ion-text-center ">Password</ion-label>
-                    <ion-input formControlName="password" type="password" [(ngModel)]="user.password"></ion-input>
+                    <ion-input formControlName="password" type="password" ></ion-input>
                   </ion-item>
+
+                  <div class="validators" *ngIf="form.controls.password.errors && form.controls.password.touched">
+                    <div *ngIf="form.controls.password.errors?.['requerid']">La contraseña es requerida</div>
+                    <div *ngIf="form.controls.password.errors?.['minlength']">La contraseña debe tener 6 caracteres como minimo</div>
+                  </div>
+
+
                 </form>
               </ion-card>
           </ion-col>
