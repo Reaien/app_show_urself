@@ -21,6 +21,7 @@ export class ProfilePage implements OnInit {
   }
 
   cerrarSesion(){
+    localStorage.removeItem('user');
     localStorage.removeItem('ingresado');
     this.utilsSvc.routerLink("/inicio");
   }

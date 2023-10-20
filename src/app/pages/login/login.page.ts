@@ -21,7 +21,6 @@ export class LoginPage implements OnInit {
   apiFireBase = inject(FirebaseService);
   utilsSvc = inject(UtilsService)
 
-  //contructor publico que se crea a partir del FormBuilder, se le dan parametros que se quieren aplicar en el formlario
 
   ngOnInit() {
   }
@@ -29,13 +28,13 @@ export class LoginPage implements OnInit {
   ingresar(){
     if (this.form.valid) {
       this.apiFireBase.login(this.form.value as User).then(res => {
-        console.log(res)
-        localStorage.setItem('ingresado','true');
-
         //obtiene el user comparandolo con el id
         this.getUserInfo(res.user.uid);
+
+        
+        
     
-        this.utilsSvc.routerLink('/splash');
+
       }).catch(error =>{
         console.log(error)
         this.utilsSvc.presentToast({
@@ -43,13 +42,16 @@ export class LoginPage implements OnInit {
           duration: 3000,
           position: 'middle',
           icon: 'alert-circle-outline'
+        }).finally(()=>{
+          localStorage.setItem('ingresado','true');
+          
         })
       })
     }
     
   }
 
-  async getUserInfo(uid: string){
+  getUserInfo(uid: string){
     if (this.form.valid) {
 
       let path = `users/${uid}`;
@@ -57,14 +59,14 @@ export class LoginPage implements OnInit {
       this.apiFireBase.getDocument(path).then((user: User) => {
 
         this.utilsSvc.saveInLocalStorage('user', user);
-
-        this.utilsSvc.routerLink('/inicio')
+        
+        this.utilsSvc.routerLink('/splash');
 
         this.form.reset();
 
 
         this.utilsSvc.presentToast({
-          message: `Sesión iniciada correctamente, Bienvenido ${user.name}`,
+          message: `Sesión iniciada correctamente, Hola ${user.name}!`,
           duration: 3000,
           color: 'warning',
           position: 'middle',
@@ -80,6 +82,8 @@ export class LoginPage implements OnInit {
           duration: 3000,
           position: 'middle',
           icon: 'alert-circle-outline'
+        }).finally(() =>{
+          
         })
       })
     }

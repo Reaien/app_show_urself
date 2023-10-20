@@ -16,7 +16,7 @@ export class SplashPage implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.utilsSvc.routerLink('/home');
-    }, 4000);
+    }, 5000);
   }
 
 
