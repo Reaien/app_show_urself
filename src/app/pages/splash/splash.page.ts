@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
+import { Component, OnInit, inject } from '@angular/core';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-splash',
@@ -10,27 +10,13 @@ export class SplashPage implements OnInit {
 
   data: any;
 
+  utilsSvc = inject(UtilsService)
 
-  constructor(private activateRoute: ActivatedRoute, public router: Router) {
-
-    this.activateRoute.queryParams.subscribe(params => {
-      if (this.router.getCurrentNavigation()?.extras.state) {
-        this.data = this.router.getCurrentNavigation()?.extras.state?.['user'];
-        console.log(this.data);
-        let navigationExtras : NavigationExtras={
-          state:{
-            user: this.data
-          }
-        }
-        setTimeout(() => {
-          this.router.navigate(['/home/main'],navigationExtras);
-        }, 4000);
-      }else{
-        this.router.navigate(["/inicio"]);
-      }
-    });
-   }
+  
   ngOnInit() {
+    setTimeout(() => {
+      this.utilsSvc.routerLink('/home');
+    }, 4000);
   }
 
 

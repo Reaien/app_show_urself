@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { CustomInputComponent } from './components/custom-input/custom-input.component';
 import { AgregarActualizadVideoComponent } from './components/agregar-actualizad-video/agregar-actualizad-video.component';
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -18,11 +19,13 @@ import { AgregarActualizadVideoComponent } from './components/agregar-actualizad
   ],
   declarations: [
     CustomInputComponent,
-    AgregarActualizadVideoComponent
+    AgregarActualizadVideoComponent,
+    HeaderComponent
 ],
   exports: [
     CustomInputComponent,
-    AgregarActualizadVideoComponent
+    AgregarActualizadVideoComponent,
+    HeaderComponent
   ]
 })
 export class SharedModule {}

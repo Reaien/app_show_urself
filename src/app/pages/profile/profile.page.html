@@ -1,24 +1,26 @@
-<ion-grid>
-  <ion-row class="ion-text-center">
-    <div class="img-row ">
-      <div class=" m">
-        <h1 class="titulo-perfil">Perfil</h1>
-        <ion-button color="warning boton" class="boton-logout" (click)="cerrarSesion()" type="button">Cerrar sesión</ion-button>
-      </div>
-      <ion-avatar class="avatar-profile box">
-        <img class="ion-img imagen-perfil " src="https://i.pinimg.com/564x/58/14/31/58143128ab1a8ff18806bd193c3beec3.jpg" alt="user-avatar">
-      </ion-avatar>
-    </div>
-  </ion-row>
 
-  <ion-row>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row class="ion-text-center">
+      <div class="img-row ">
+        <div class=" m">
+          <h1 class="titulo-perfil">Perfil</h1>
+          <ion-button color="warning boton" class="boton-logout" (click)="cerrarSesion()" type="button">Cerrar sesión</ion-button>
+        </div>
+        <ion-avatar class="avatar-profile box">
+          <img class="ion-img imagen-perfil " src="https://i.pinimg.com/564x/58/14/31/58143128ab1a8ff18806bd193c3beec3.jpg" alt="user-avatar">
+        </ion-avatar>
+      </div>
+    </ion-row>
+  
     <ion-col size="12" class="ion-text-center">
-      <h2 class="user-name">Ando</h2>
-      <p class="user-email">ando@gmail.com</p>
+      <h2 class="user-name">{{user.name}}</h2>
+      <p class="user-email">{{user.email}}</p>
     </ion-col>
-    <ion-col size="11" class="ion-text-center m">
-      <ion-card color="light">
-        <ion-card-content>
+    <ion-col size="11" class=" m">
+      <ion-card >
+        <ion-card-content >
           <ion-list>
             <ion-item type="button" color="light" class="ion-text-center">
               <ion-thumbnail slot="start">
@@ -38,7 +40,7 @@
               <ion-thumbnail slot="start">
                 <ion-icon name="close-circle-outline" size="large" class="icon-card-profile"></ion-icon>
               </ion-thumbnail>
-              <p class="card-option-name">Elimina Video</p>
+              <p class="card-option-name">Eliminar Video</p>
             </ion-item>
       
             <ion-item type="button" color="light" class="ion-text-center">
@@ -51,5 +53,5 @@
         </ion-card-content>
       </ion-card>
     </ion-col>
-  </ion-row>
-</ion-grid>
+  </ion-grid>
+</ion-content>

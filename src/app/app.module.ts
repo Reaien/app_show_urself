@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 //FIREBASE
 import { AngularFireModule } from '@angular/fire/compat'
-import { environment } from 'src/environments/environment'; //escribir y configurar en imports abajo
+import { environment } from 'src/environments/environment';
 
 
 

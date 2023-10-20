@@ -1,1 +1,42 @@
-<p>toy enojao debo separar los components del home, lo dejare como pages, no estoy ni ahi</p>
+<app-header [isModal]="true" ></app-header>
+
+<ion-content>
+    <ion-row>
+        <ion-col class="ion-text-center">
+            <ion-card class="card-container box">
+                <ion-card-content>
+                    <form [formGroup] = "form">
+                        <ion-item class=" label-container">
+                            <ion-label class="ion-text-center" position="floating">Título del video</ion-label>
+                            <ion-input formControlName="titulo" type="text"></ion-input>
+                        </ion-item>
+
+                        <div class="validators" *ngIf="form.controls.descripcion.errors && form.controls.descripcion.touched">
+                            <div *ngIf="form.controls.descripcion.errors?.['requerid']">El nombre es requerido</div>
+                        </div>
+
+
+                        <ion-item class="label-container">
+                            <ion-label position="floating" class="ion-text-center ">Video</ion-label>
+                            <ion-input formControlName="imagen" type="video"></ion-input>
+                        </ion-item>
+
+                        <div class="validators" *ngIf="form.controls.video.errors && form.controls.video.touched">
+                            <div *ngIf="form.controls.video.errors?.['requerid']">El video es requerido</div>
+                        </div>
+
+                        <ion-item class="label-container">
+                            <ion-label position="floating" class="ion-text-center ">Autor</ion-label>
+                            <ion-input formControlName="autor" type="video"></ion-input>
+                        </ion-item>
+
+                        <div class="validators" *ngIf="form.controls.autor.errors && form.controls.autor.touched">
+                            <div *ngIf="form.controls.autor.errors?.['requerid']">El autor es requerido</div>
+                        </div>
+                    </form>
+                </ion-card-content>
+            </ion-card>
+            <ion-button color="warning boton" class="boton-upload" type="button">Subír Video</ion-button>
+        </ion-col>
+    </ion-row>
+</ion-content>

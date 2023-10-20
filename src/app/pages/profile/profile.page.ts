@@ -1,19 +1,24 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { UtilsService } from 'src/app/services/utils.service';
-import { AgregarActualizadVideoComponent } from '../agregar-actualizad-video/agregar-actualizad-video.component';
+import { AgregarActualizadVideoComponent } from 'src/app/shared/components/agregar-actualizad-video/agregar-actualizad-video.component';
 
 @Component({
-  selector: 'app-comp-user',
-  templateUrl: './comp-user.component.html',
-  styleUrls: ['./comp-user.component.scss'],
+  selector: 'app-profile',
+  templateUrl: './profile.page.html',
+  styleUrls: ['./profile.page.scss'],
 })
-export class CompUserComponent  implements OnInit {
+export class ProfilePage implements OnInit {
 
+
+  user: any;
   apiFireBase = inject(FirebaseService);
   utilsSvc = inject(UtilsService)
 
-  ngOnInit() {}
+  ngOnInit() {
+
+    this.user = this.utilsSvc.getFromLocalStorage('user');
+  }
 
   cerrarSesion(){
     localStorage.removeItem('ingresado');
@@ -27,5 +32,6 @@ export class CompUserComponent  implements OnInit {
     })
     
   }
+
 
 }

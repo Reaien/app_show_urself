@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CustomInputComponent  implements OnInit {
 
-  @Input() isModal!: boolean;
+  
 
   constructor() { }
 

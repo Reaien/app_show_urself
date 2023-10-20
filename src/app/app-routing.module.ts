@@ -39,6 +39,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/splash/splash.module').then( m => m.SplashPageModule),
     canActivate : [LoggerGuard]
   },
+  {
+    path: 'profile',
+    loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule),
+    canActivate : [LoggerGuard]
+  },
+
 ];
 
 @NgModule({
