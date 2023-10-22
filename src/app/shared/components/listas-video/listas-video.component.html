@@ -1,0 +1,33 @@
+<app-header [isModal]="true" ></app-header>
+
+
+<ion-content>
+    <ion-card>
+        <ion-card-content>
+            <ion-list>
+                <ion-item-sliding  *ngFor="let video of videos">
+                    <ion-item>
+                        <ion-label>
+                            <div>Titulo: </div> <p> {{video.titulo}} </p>
+                            <br>
+                            <div>Autor: </div> <p>{{video.autor}}</p>
+                            <br>
+                        </ion-label>
+                        <ion-avatar class="ion-nowrap avatarsh">
+                            <img [src]="video?.video">
+                        </ion-avatar>
+                        <ion-item-options>
+                            <ion-item-option>
+                                <ion-icon name="create-outline"></ion-icon>
+                            </ion-item-option>
+                
+                            <ion-item-option color="danger">
+                                <ion-icon name="trash-outline"></ion-icon>
+                            </ion-item-option>                
+                        </ion-item-options>
+                    </ion-item>
+                </ion-item-sliding>
+            </ion-list>   
+        </ion-card-content>
+    </ion-card>
+</ion-content>

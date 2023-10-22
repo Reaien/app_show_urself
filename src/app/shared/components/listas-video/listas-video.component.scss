@@ -1,0 +1,21 @@
+ion-content {
+    --ion-background-color: rgb(36, 35, 37);
+  }
+
+  ion-card{
+    --ion-background-color: rgba(255, 255, 255, 0.959);
+}
+
+ion-avatar{
+    width: 120px;
+    height: 120px;
+    --border-radius: 8px
+}
+
+.avatarsh{
+    margin-right: 80px;
+}
+
+.wrapper{
+    word-wrap: break-word;
+}

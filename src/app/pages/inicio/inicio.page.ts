@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { reload } from 'firebase/auth';
 
 @Component({
   selector: 'app-inicio',
@@ -9,7 +10,11 @@ export class InicioPage implements OnInit {
 
   constructor() { }
 
+
+  
+
   ngOnInit() {
+
   }
 
 }

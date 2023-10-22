@@ -36,6 +36,12 @@ button {
 .slide-image {
   height: 12rem;
   border-radius: 20px;
+  z-index: 1;
+}
+
+.boton-play{
+  position: absolute;
+  z-index: 2;
 }
 
 .slider-videos-tittle {

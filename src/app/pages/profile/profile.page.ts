@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { UtilsService } from 'src/app/services/utils.service';
 import { AgregarActualizadVideoComponent } from 'src/app/shared/components/agregar-actualizad-video/agregar-actualizad-video.component';
+import { ListasVideoComponent } from 'src/app/shared/components/listas-video/listas-video.component';
 
 @Component({
   selector: 'app-profile',
@@ -32,6 +33,12 @@ export class ProfilePage implements OnInit {
       component: AgregarActualizadVideoComponent
     })
     
+  }
+
+  listarVideos(){
+    this.utilsSvc.mostrarModal({
+      component: ListasVideoComponent
+    })
   }
 
 

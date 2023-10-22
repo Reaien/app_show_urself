@@ -6,6 +6,7 @@ import { IonicModule } from '@ionic/angular';
 import { CustomInputComponent } from './components/custom-input/custom-input.component';
 import { AgregarActualizadVideoComponent } from './components/agregar-actualizad-video/agregar-actualizad-video.component';
 import { HeaderComponent } from './header/header.component';
+import { ListasVideoComponent } from './components/listas-video/listas-video.component';
 
 
 
@@ -20,12 +21,14 @@ import { HeaderComponent } from './header/header.component';
   declarations: [
     CustomInputComponent,
     AgregarActualizadVideoComponent,
-    HeaderComponent
+    HeaderComponent,
+    ListasVideoComponent
 ],
   exports: [
     CustomInputComponent,
     AgregarActualizadVideoComponent,
-    HeaderComponent
+    HeaderComponent,
+    ListasVideoComponent
   ]
 })
 export class SharedModule {}

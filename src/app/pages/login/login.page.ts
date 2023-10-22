@@ -32,7 +32,9 @@ export class LoginPage implements OnInit {
         this.getUserInfo(res.user.uid);
 
         
-        
+        this.utilsSvc.routerLink('/splash');
+
+        localStorage.setItem('ingresado','true');
     
 
       }).catch(error =>{
@@ -42,9 +44,6 @@ export class LoginPage implements OnInit {
           duration: 3000,
           position: 'middle',
           icon: 'alert-circle-outline'
-        }).finally(()=>{
-          localStorage.setItem('ingresado','true');
-          
         })
       })
     }
@@ -60,7 +59,7 @@ export class LoginPage implements OnInit {
 
         this.utilsSvc.saveInLocalStorage('user', user);
         
-        this.utilsSvc.routerLink('/splash');
+        
 
         this.form.reset();
 
