@@ -1,6 +1,11 @@
 
 
 <ion-content [fullscreen]="true">
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)" >
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
   <div class="glass-content">
     <ion-grid>
       <ion-row>

@@ -29,6 +29,7 @@ export class HomePage implements OnInit {
   ionViewWillEnter(){
     this.getVideos();
     
+    
   }
 
 

@@ -17,6 +17,8 @@ export class ListasVideoComponent  implements OnInit {
 
   videos: Video[] = [];
 
+  loading: boolean = false;
+
 
   usuario(): User{
     return this.utilsSvc.getFromLocalStorage('user');
@@ -33,10 +35,15 @@ export class ListasVideoComponent  implements OnInit {
   getVideos(){
     let path = `users/${this.usuario().uid}/videos`;
 
+    this.loading = true;
+
     let sub = this.apiFireBase.getCollectionData(path).subscribe({
       next: (res:any) => {
         console.log(res);
         this.videos = res;
+
+        this.loading = false;
+
         sub.unsubscribe();
       }
     })

@@ -44,6 +44,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/profile/profile.module').then( m => m.ProfilePageModule),
     canActivate : [LoggerGuard]
   },
+  {
+    path: 'error404',
+    loadChildren: () => import('./pages/error404/error404.module').then( m => m.Error404PageModule),
+    canActivate : [UnloggedGuard]
+  },
+
 
 
 ];

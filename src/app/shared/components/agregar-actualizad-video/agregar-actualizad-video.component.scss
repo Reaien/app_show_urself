@@ -1,33 +1,55 @@
 ion-content {
-    --ion-background-color: rgb(36, 35, 37);
+  --ion-background-color: rgb(36, 35, 37);
 }
 
-h1, h2, h3, p, button{
-    color: white;
+h1,
+h2,
+h3,
+p,
+button {
+  color: white;
 }
 
-ion-card{
-    --ion-background-color: rgb(255, 255, 255);
+ion-card {
+  --ion-background-color: rgb(255, 255, 255);
 }
 
-ion-item{
-    --ion-background-color: rgb(255, 255, 255);
+ion-item {
+  --ion-background-color: rgb(255, 255, 255);
 }
 
-.boton{
-    width: 6rem;
-    font-size: 9px;
+.boton {
+  width: 6rem;
+  font-size: 9px;
 }
 
-
-.image-icon{
-    font-size: 80px;
-    opacity: 30%;
+.image-icon {
+  font-size: 80px;
+  opacity: 30%;
 }
 
-ion-avatar{
-    margin: 0 auto;
-    width: 200px;
-    height: 160px;
-    --border-radius: 15px
+ion-avatar {
+  margin: 0 auto;
+  width: 200px;
+  height: 160px;
+  --border-radius: 15px;
 }
+
+.img-row {
+  background-image: url("../../../../assets/img/bg-profile.png");
+  background-repeat: no-repeat;
+  padding-left: 23%;
+  padding-right: 22%;
+  padding-bottom: 5%;
+}
+
+.titulo-error {
+  color: #ec6635;
+  font-size: 35px;
+  margin-top: 2rem;
+}
+
+.ninja{
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+  }

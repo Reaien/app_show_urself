@@ -2,11 +2,7 @@ ion-content {
     --ion-background-color: rgb(36, 35, 37);
 }
 
-ion-card{
-    --ion-background-color: rgb(255, 255, 255);
-    
 
-}
 ion-card-content{
     padding-top: 2px;
 }
@@ -23,7 +19,7 @@ ion-item{
 
 
 .avatar-profile{
-    margin-top: 5rem;
+    margin-top: 4rem;
     height: 13rem;
     min-width: 13rem;
 }
@@ -32,8 +28,8 @@ ion-item{
 .img-row{
     background-image: url('../../../assets/img/bg-profile.png');
     background-repeat: no-repeat;
-    padding-left: 20%;
-    padding-right: 25%;
+    padding-left: 23%;
+    padding-right: 22%;
 }
 
 .imagen-perfil{
@@ -46,6 +42,8 @@ ion-item{
     color: black;
     font-weight: bolder;
     font-size: 40px;
+    margin: 0;
+    padding-top: 10px;
 }
 
 .user-name{

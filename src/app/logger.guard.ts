@@ -16,7 +16,7 @@ export class LoggerGuard implements CanActivate { //guards que sirven para condi
     if (localStorage.getItem('ingresado')) {
       return true; //en este caso para el sistema de deteccion de cuenta logueada en el TS del page de login al momento de ingresar creamos un nuevo item
     }else{        //en el local storage el cual ingresamos un dato con un balor booleanoo y al retornar true en el routing utilizando la f canActivate le indicamos que puede activar la page
-      this.navCtrl.navigateRoot('inicio');
+      this.navCtrl.navigateRoot('error404');
       return false; //caso contrario retornará falso y este con la f del navcontroller nos devolverá a la page de inicio
     }
   }

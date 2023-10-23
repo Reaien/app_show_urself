@@ -2,17 +2,18 @@
 
 <ion-content [fullscreen]="true">
 
-    <ion-row class="ion-text-center">
-      <div class="img-row ">
+
+      <div class="img-row ion-text-center">
+        <h1 class="titulo-perfil">Perfil</h1>
         <div class=" m">
-          <h1 class="titulo-perfil">Perfil</h1>
+          
           <ion-button color="warning" class="boton-logout" (click)="cerrarSesion()" type="button">Cerrar sesión</ion-button>
         </div>
         <ion-avatar class="avatar-profile box">
           <img class="ion-img imagen-perfil " src="https://i.pinimg.com/564x/58/14/31/58143128ab1a8ff18806bd193c3beec3.jpg" alt="user-avatar">
         </ion-avatar>
       </div>
-    </ion-row>
+
   
     <ion-col size="12" class="ion-text-center">
       <h2 class="user-name">{{user.name}}</h2>
