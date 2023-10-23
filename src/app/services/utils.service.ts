@@ -12,7 +12,7 @@ export class UtilsService {
   router = inject(Router)
   modalCtrl = inject(ModalController)
 
-  
+
 
   async takePicture(promptLabelHeader: string) {
     return await Camera.getPhoto({
@@ -60,5 +60,7 @@ export class UtilsService {
   cerrarModal(data?: any){
     return this.modalCtrl.dismiss(data);
   }
+
+  
 
 }

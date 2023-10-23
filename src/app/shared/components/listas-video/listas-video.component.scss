@@ -2,8 +2,12 @@ ion-content {
     --ion-background-color: rgb(36, 35, 37);
   }
 
-  ion-card{
-    --ion-background-color: rgba(255, 255, 255, 0.959);
+  ion-item{
+    --ion-background-color: rgb(255, 255, 255);
+}
+
+ion-item-sliding{
+  margin-bottom: 1rem;
 }
 
 ion-avatar{
@@ -12,10 +16,3 @@ ion-avatar{
     --border-radius: 8px
 }
 
-.avatarsh{
-    margin-right: 80px;
-}
-
-.wrapper{
-    word-wrap: break-word;
-}

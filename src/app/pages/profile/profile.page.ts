@@ -1,4 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
+import { Video } from 'src/app/models/video.model';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { UtilsService } from 'src/app/services/utils.service';
 import { AgregarActualizadVideoComponent } from 'src/app/shared/components/agregar-actualizad-video/agregar-actualizad-video.component';
@@ -28,11 +29,11 @@ export class ProfilePage implements OnInit {
   }
 
   //agregar o actualizar video
-  addUpdateVideo(){
+  addUpdateVideo(video?: Video){
     this.utilsSvc.mostrarModal({
-      component: AgregarActualizadVideoComponent
+      component: AgregarActualizadVideoComponent,
+      componentProps: { video }
     })
-    
   }
 
   listarVideos(){
@@ -40,6 +41,8 @@ export class ProfilePage implements OnInit {
       component: ListasVideoComponent
     })
   }
+
+ 
 
 
 }

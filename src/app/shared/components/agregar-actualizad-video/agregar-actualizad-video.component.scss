@@ -7,7 +7,11 @@ h1, h2, h3, p, button{
 }
 
 ion-card{
-    --ion-background-color: rgba(255, 255, 255, 0.959);
+    --ion-background-color: rgb(255, 255, 255);
+}
+
+ion-item{
+    --ion-background-color: rgb(255, 255, 255);
 }
 
 .boton{

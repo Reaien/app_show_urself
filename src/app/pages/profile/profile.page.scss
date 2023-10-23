@@ -2,6 +2,24 @@ ion-content {
     --ion-background-color: rgb(36, 35, 37);
 }
 
+ion-card{
+    --ion-background-color: rgb(255, 255, 255);
+    
+
+}
+ion-card-content{
+    padding-top: 2px;
+}
+ion-list{
+    padding: 0;
+}
+
+ion-item{
+    border-radius: 15px;
+    margin-top: 10px;
+    height: 60px;
+}
+
 
 
 .avatar-profile{
@@ -40,7 +58,7 @@ ion-content {
 .user-email{
     margin-top: 0;
     color: white;
-    font-size: 9px;
+    font-size: 13px;
 }
 
 .icon-card-profile{

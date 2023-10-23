@@ -4,8 +4,8 @@ import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, up
 import { User } from '../models/user.model';
 import { AngularFirestore } from "@angular/fire/compat/firestore";
 import { AngularFireStorage } from "@angular/fire/compat/storage";
-import { getStorage, uploadString, ref, getDownloadURL } from 'firebase/storage';
-import { getFirestore, setDoc, doc, getDoc, addDoc, collection, collectionData, query } from "@angular/fire/firestore";
+import { getStorage, uploadString, ref, getDownloadURL, deleteObject } from 'firebase/storage';
+import { getFirestore, setDoc, doc, getDoc, addDoc, collection, collectionData, query, updateDoc, deleteDoc } from "@angular/fire/firestore";
 
 @Injectable({
   providedIn: 'root'
@@ -36,6 +36,13 @@ export class FirebaseService {
     return sendPasswordResetEmail(getAuth(), email)
   }
 
+    //setear info usuarios
+  //usado para guardar datos de un usuario, estos quedaran con un id
+  setDocument(path: string, data: any){
+    return setDoc(doc(getFirestore(), path), data);
+  }
+
+
 
 
   // Metodos para interactuar con la base de datos
@@ -47,11 +54,6 @@ export class FirebaseService {
   }
 
 
-  //setear info
-  //usado para guardar datos de un usuario, estos quedaran con un id
-  setDocument(path: string, data: any){
-    return setDoc(doc(getFirestore(), path), data);
-  }
 
 
   //Obtener info
@@ -60,9 +62,21 @@ export class FirebaseService {
   }
 
   //agregar 
-  //se agregaran videos que en este caso quedaran asociados como una subobjeto del usuario
+  //se agregaran videos 
   addDocument(path: string, data: any){
     return addDoc(collection(getFirestore(), path), data);
+  }
+
+  //modificar 
+  //se modifican videos 
+  modificarDocument(path: string, data: any){
+    return updateDoc(doc(getFirestore(), path), data);
+  }
+
+  //borrar 
+  //se borran videos 
+  deleteDocument(path: string){
+    return deleteDoc(doc(getFirestore(), path));
   }
 
 
@@ -73,6 +87,15 @@ export class FirebaseService {
     return uploadString(ref(getStorage(), path), data_url, 'data_url').then (() =>{
       return getDownloadURL(ref(getStorage(), path))
     })
+  }
+
+  //obtener url de la imagen/video para reemplazarla en la funcion de actualizar video en la imagen
+  async obtenerUrlImagen(url: string){
+    return ref(getStorage(), url).fullPath
+  }
+
+  borrarArchivo(path: string){
+    return deleteObject(ref(getStorage(), path))
   }
 
 }
