@@ -34,6 +34,8 @@ export class ProfilePage implements OnInit {
       component: AgregarActualizadVideoComponent,
       componentProps: { video }
     })
+
+    
   }
 
   listarVideos(){

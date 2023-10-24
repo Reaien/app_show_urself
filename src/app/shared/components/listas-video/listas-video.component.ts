@@ -24,7 +24,9 @@ export class ListasVideoComponent  implements OnInit {
     return this.utilsSvc.getFromLocalStorage('user');
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    
+  }
 
   ionViewWillEnter(){
     this.getVideos();
@@ -50,13 +52,12 @@ export class ListasVideoComponent  implements OnInit {
   }
 
  //editarVideo
-  UpdateVideo(video?: Video){
-    console.log("hola")
-    this.utilsSvc.mostrarModal({
+  async UpdateVideo(video?: Video){
+    let success = await this.utilsSvc.mostrarModal({
       component: AgregarActualizadVideoComponent,
       componentProps: { video }
     })
-    
+    if(success)this.getVideos();
   }
 
 

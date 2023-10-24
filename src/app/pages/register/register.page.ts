@@ -19,7 +19,8 @@ export class RegisterPage implements OnInit {
     uid: new FormControl(""),
     email: new FormControl("",[Validators.required, Validators.email]), //como será llamado, se le asigna como nuevo objeto new FormControl y se le dan los parametros que estará vacio y que se requiere validar
     password: new FormControl("",[Validators.required, Validators.minLength(6)]),
-    name: new FormControl("",[Validators.required, Validators.minLength(4)])
+    name: new FormControl("",[Validators.required, Validators.minLength(4)]),
+    profilePic: new FormControl("",[Validators.required]),
   })
 
   router = inject(Router);
@@ -32,10 +33,18 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
   }
 
+  async obtenerImagen(){
+    const dataUrl = (await this.utilsSvc.takePicture('Imagen de perfil')).dataUrl;
+    this.form.controls.profilePic.setValue(dataUrl);
+  }
+
   async registrar(){
     if (this.form.valid) {
       this.apiFireBase.registro(this.form.value as User).then(async res => {
         await this.apiFireBase.actualizarUsuario(this.form.value.name)
+
+
+
 
         let uid = res.user.uid;
 
