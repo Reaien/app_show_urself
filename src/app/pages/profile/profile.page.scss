@@ -35,8 +35,21 @@ ion-item{
 .imagen-perfil{
     display: block;
     border-style: solid;
+    border-color: aliceblue;
 
 }
+
+.container-qr{
+    padding-top: 1rem;
+    display: flex;
+}
+
+.img-qr{
+    height: 64px;
+    margin-left: 4rem;
+}
+
+
 
 .titulo-perfil{
     color: black;
@@ -44,6 +57,7 @@ ion-item{
     font-size: 40px;
     margin: 0;
     padding-top: 10px;
+    margin-left: 3.5rem;
 }
 
 .user-name{
@@ -75,4 +89,3 @@ ion-item{
     width: 6rem;
     font-size: 9px;
 }
-

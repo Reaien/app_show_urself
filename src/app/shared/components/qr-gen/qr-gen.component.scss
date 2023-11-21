@@ -1,0 +1,121 @@
+h1,
+h2,
+h3,
+p,
+button {
+  color: #ec6635;
+  font-family: Ubuntu, sans-serif;
+}
+
+ion-card {
+  --ion-background-color: rgb(255, 255, 255);
+  width: 21rem;
+  height: 45rem;
+}
+
+ion-item {
+  --ion-background-color: rgb(255, 255, 255);
+}
+
+ion-avatar {
+  --border-radius: 2px;
+  width: 8rem;
+  height: 8rem;
+}
+
+.slogan{
+  margin-left: 6rem;
+}
+
+.titulo{
+  font-size: 18px;
+}
+
+.user{
+  font-size: 40px;
+  margin-top: 1rem;
+  font-weight: bolder;
+}
+
+.user-avatar > img{
+  width: 200px;
+	height: 250px;
+
+}
+
+.avatar{
+  margin-top: 1rem;
+  border-radius: 10px;
+}
+
+.bg-card{
+  background-image: url('../../../../assets/img/bg-profile2.jpeg');
+  background-repeat: no-repeat;
+  height: 200px;
+}
+
+
+.scale-in-center {
+	-webkit-animation: scale-in-center 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: scale-in-center 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+.tracking-in-contract {
+	-webkit-animation: tracking-in-contract 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	        animation: tracking-in-contract 5s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+@-webkit-keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-contract {
+  0% {
+    letter-spacing: 1em;
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    letter-spacing: normal;
+    opacity: 1;
+  }
+}
+
+

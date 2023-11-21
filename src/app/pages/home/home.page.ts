@@ -4,6 +4,7 @@ import { User } from 'src/app/models/user.model';
 import { Video } from 'src/app/models/video.model';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { UtilsService } from 'src/app/services/utils.service';
+import { QrGenComponent } from 'src/app/shared/components/qr-gen/qr-gen.component';
 
 @Component({
   selector: 'app-home',
@@ -43,6 +44,13 @@ export class HomePage implements OnInit {
         this.slides = res;
         sub.unsubscribe();
       }
+    })
+  }
+
+  compartirQR(){
+    this.utilsSvc.mostrarModal({
+      component: QrGenComponent,
+      cssClass: 'cardQR'
     })
   }
 

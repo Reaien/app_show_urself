@@ -7,6 +7,8 @@ import { CustomInputComponent } from './components/custom-input/custom-input.com
 import { AgregarActualizadVideoComponent } from './components/agregar-actualizad-video/agregar-actualizad-video.component';
 import { HeaderComponent } from './header/header.component';
 import { ListasVideoComponent } from './components/listas-video/listas-video.component';
+import { QrGenComponent } from './components/qr-gen/qr-gen.component';
+import { QRCodeModule } from 'angularx-qrcode';
 
 
 
@@ -16,20 +18,21 @@ import { ListasVideoComponent } from './components/listas-video/listas-video.com
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-  
+    QRCodeModule
   ],
   declarations: [
     CustomInputComponent,
     AgregarActualizadVideoComponent,
     HeaderComponent,
-    ListasVideoComponent
+    ListasVideoComponent,
+    QrGenComponent
 ],
   exports: [
     CustomInputComponent,
     AgregarActualizadVideoComponent,
     HeaderComponent,
-    ListasVideoComponent
+    ListasVideoComponent,
+    QrGenComponent
   ]
 })
 export class SharedModule {}
-

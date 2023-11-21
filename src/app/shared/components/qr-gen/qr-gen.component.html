@@ -1,0 +1,45 @@
+<app-header [isModal]="true" ></app-header>
+
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-card>
+        <ion-card-content class="bg-card ">
+          <ion-row class="ion-text-center">
+
+            <ion-col size="12" class="user-avatar">
+              <img class="avatar scale-in-center " alt="user-avatar" src="{{user.profilePic}}" />
+            </ion-col>
+
+
+          </ion-row>
+          <ion-row class="ion-text-center">
+            <ion-col size="12">
+              <h3 class="titulo">No te pierdas el perfil de</h3>
+            </ion-col>
+
+
+
+            <ion-col size="12">
+              <h1 class="user tracking-in-contract">{{user.name}}</h1>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12">
+              <h2>Muchos ya son parte de ShowURself </h2>
+              <p>Únete: </p>
+              <qrcode width="180" qrdata="https://reaien.github.io/web_showurself/"></qrcode>
+            </ion-col>
+            <ion-col size="2">
+              <img src="../../../../assets/img/compartir.png" alt="share">
+            </ion-col>
+            <ion-col size="10">
+              <h2>Compartir por correo</h2>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

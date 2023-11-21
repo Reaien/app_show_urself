@@ -1,52 +1,55 @@
-
-
 <ion-content [fullscreen]="true">
 
+    
+  <div class="img-row ion-text-center">
+    <div class="container-qr">
+      <h1 class="titulo-perfil">Perfil</h1>
+      <ion-button (click)="scan()" expand="block" fill="clear" shape="round">
+        <img class="img-qr" src="../../../assets/img/codigo-qr-grande.png"/>
+      </ion-button>
+    </div>
 
-      <div class="img-row ion-text-center">
-        <h1 class="titulo-perfil">Perfil</h1>
-        <div class=" m">
-          
-          <ion-button color="warning" class="boton-logout" (click)="cerrarSesion()" type="button">Cerrar sesión</ion-button>
-        </div>
-        <ion-avatar class="avatar-profile box">
-          <img class="ion-img imagen-perfil " src="{{user.profilePic}}" alt="user-avatar">
-        </ion-avatar>
-      </div>
+    <div class=" m">
+      <ion-button color="warning" class="boton-logout" (click)="cerrarSesion()" type="button">Cerrar sesión</ion-button>
+    </div>
+    <ion-avatar class="avatar-profile box">
+      <img class="ion-img imagen-perfil " src="{{user.profilePic}}" alt="user-avatar">
+    </ion-avatar>
+  </div>
 
+
+<ion-col size="12" class="ion-text-center">
+  <h2 class="user-name">{{user.name}}</h2>
+  <p class="user-email">{{user.email}}</p>
+</ion-col>
+<ion-col size="11" class=" m">
+  <ion-card >
+    <ion-card-content >
+      <ion-list>
+        
+        <ion-item (click)="addUpdateVideo()" type="button" color="light" class="ion-text-center">
+          <ion-thumbnail slot="start">
+            <ion-icon name="caret-up-circle-outline" size="large" class="icon-card-profile"></ion-icon>
+          </ion-thumbnail>
+          <p  class="card-option-name">Subir Video</p>
+        </ion-item>
   
-    <ion-col size="12" class="ion-text-center">
-      <h2 class="user-name">{{user.name}}</h2>
-      <p class="user-email">{{user.email}}</p>
-    </ion-col>
-    <ion-col size="11" class=" m">
-      <ion-card >
-        <ion-card-content >
-          <ion-list>
-            
-            <ion-item (click)="addUpdateVideo()" type="button" color="light" class="ion-text-center">
-              <ion-thumbnail slot="start">
-                <ion-icon name="caret-up-circle-outline" size="large" class="icon-card-profile"></ion-icon>
-              </ion-thumbnail>
-              <p  class="card-option-name">Subir Video</p>
-            </ion-item>
-      
-            <ion-item (click)="listarVideos()" type="button" color="light" class="ion-text-center">
-              <ion-thumbnail slot="start">
-                <ion-icon name="folder-open-outline" size="large" class="icon-card-profile"></ion-icon>
-              </ion-thumbnail>
-              <p  class="card-option-name">Tus videos</p> 
-            </ion-item>
-      
-            <ion-item type="button" color="light" class="ion-text-center">
-              <ion-thumbnail slot="start">
-                <ion-icon name="happy-outline" size="large" class="icon-card-profile"></ion-icon>
-              </ion-thumbnail>
-              <p class="card-option-name">Tus Datos</p> 
-            </ion-item>
-          </ion-list>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
+        <ion-item (click)="listarVideos()" type="button" color="light" class="ion-text-center">
+          <ion-thumbnail slot="start">
+            <ion-icon name="folder-open-outline" size="large" class="icon-card-profile"></ion-icon>
+          </ion-thumbnail>
+          <p  class="card-option-name">Tus videos</p> 
+        </ion-item>
+  
+        <ion-item type="button" color="light" class="ion-text-center">
+          <ion-thumbnail slot="start">
+            <ion-icon name="happy-outline" size="large" class="icon-card-profile"></ion-icon>
+          </ion-thumbnail>
+          <p class="card-option-name">Tus Datos</p> 
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-col>
 
 </ion-content>
