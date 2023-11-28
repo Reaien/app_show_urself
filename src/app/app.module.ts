@@ -15,6 +15,7 @@ import { environment } from 'src/environments/environment';
 
 //qr
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
+import { EmailComposer } from '@awesome-cordova-plugins/email-composer/ngx';
 
 
 
@@ -24,7 +25,7 @@ import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule, IonicModule.forRoot(), HttpClientModule ,AppRoutingModule, AngularFireModule.initializeApp(environment.firebaseConfig)], //colocar angular fire module
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },BarcodeScanner],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },BarcodeScanner, EmailComposer],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,6 +1,6 @@
 <app-header [isModal]="true" ></app-header>
 
-<ion-grid>
+<ion-grid id="elementoCapturar">
   <ion-row>
     <ion-col>
       <ion-card>
@@ -8,7 +8,7 @@
           <ion-row class="ion-text-center">
 
             <ion-col size="12" class="user-avatar">
-              <img class="avatar scale-in-center " alt="user-avatar" src="{{user.profilePic}}" />
+              <img class="avatar" alt="user-avatar" src="{{user.profilePic}}" />
             </ion-col>
 
 
@@ -21,7 +21,7 @@
 
 
             <ion-col size="12">
-              <h1 class="user tracking-in-contract">{{user.name}}</h1>
+              <h1 class="user">{{user.name}}</h1>
             </ion-col>
           </ion-row>
 
@@ -31,12 +31,14 @@
               <p>Únete: </p>
               <qrcode width="180" qrdata="https://reaien.github.io/web_showurself/"></qrcode>
             </ion-col>
-            <ion-col size="2">
-              <img src="../../../../assets/img/compartir.png" alt="share">
-            </ion-col>
-            <ion-col size="10">
-              <h2>Compartir por correo</h2>
-            </ion-col>
+            <div (click)="capturarPantallaYEnviarEmail()">
+              <ion-col  size="2">
+                <img src="../../../../assets/img/compartir.png" alt="share">
+              </ion-col>
+              <ion-col size="10">
+                <h2>Compartir por correo</h2>
+              </ion-col>
+            </div>
           </ion-row>
         </ion-card-content>
       </ion-card>
