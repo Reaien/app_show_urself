@@ -37,7 +37,7 @@ export class QrGenComponent  implements OnInit {
       const email = {
         to: '',
         subject: 'Hey ven a ShowURself !',
-        body: 'No pierdas la oportunidad de ser parte de ShowURself',
+        body: 'No pierdas la oportunidad de ser parte de ShowURself Visitanos en https://reaien.github.io/web_showurself/',
         isHtml: true,
         attachments: [
           'base64:' + 'captura.png//' + imageDataUrl.split(',')[1],
