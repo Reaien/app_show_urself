@@ -5,6 +5,7 @@ import { UtilsService } from 'src/app/services/utils.service';
 import { AgregarActualizadVideoComponent } from 'src/app/shared/components/agregar-actualizad-video/agregar-actualizad-video.component';
 import { ListasVideoComponent } from 'src/app/shared/components/listas-video/listas-video.component';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
+import { Browser } from '@capacitor/browser';
 
 @Component({
   selector: 'app-profile',
@@ -30,10 +31,14 @@ export class ProfilePage implements OnInit {
 
   scan(){
     this.barcodeScanner.scan().then(barcodeData => {
-      console.log('Barcode data', barcodeData);
+        this.openBrowser(barcodeData)
      }).catch(err => {
          console.log('Error', err);
      });
+  }
+
+  openBrowser(barcodeData: any){
+    Browser.open({ url: barcodeData.text });
   }
   
 
