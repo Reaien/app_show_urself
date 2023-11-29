@@ -1,0 +1,70 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-14:12
+INJECTED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:1-14:12
+	package
+		INJECTED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+	xmlns:amazon
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:3:1-57
+	xmlns:android
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:4:1-10:15
+provider#de.appplant.cordova.emailcomposer.Provider
+ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:1-7:12
+	android:grantUriPermissions
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:156-190
+	android:authorities
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:69-130
+	android:exported
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:131-155
+	android:name
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:5:11-68
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:3-119
+	android:resource
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:65-117
+	android:name
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:6:14-64
+activity#com.google.zxing.client.android.CaptureActivity
+ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:1-302
+	android:clearTaskOnLaunch
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:74-106
+	android:windowSoftInputMode
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:228-275
+	android:exported
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:276-300
+	android:configChanges
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:107-168
+	android:theme
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:169-227
+	android:name
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:8:11-73
+activity#com.google.zxing.client.android.encode.EncodeActivity
+ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:1-103
+	android:label
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:80-101
+	android:name
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:9:11-79
+uses-permission#android.permission.CAMERA
+ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:11:1-60
+	android:name
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:11:18-58
+uses-permission#android.permission.FLASHLIGHT
+ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:12:1-64
+	android:name
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:12:18-62
+uses-feature#android.hardware.camera
+ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:13:1-79
+	android:required
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:13:54-77
+	android:name
+		ADDED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml:13:15-53
+uses-sdk
+INJECTED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+INJECTED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\ivand\OneDrive\Escritorio\app_show_urself\android\capacitor-cordova-android-plugins\src\main\AndroidManifest.xml

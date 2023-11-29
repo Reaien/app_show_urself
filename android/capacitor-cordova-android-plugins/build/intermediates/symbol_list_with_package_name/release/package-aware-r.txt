@@ -1,0 +1,2 @@
+capacitor.cordova.android.plugins
+xml emailcomposer_provider_paths
